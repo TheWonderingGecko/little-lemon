@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import Button from './Global_components/Button'
+import Specials_Container from './Global_components/Specials_Container'
 
 export class Main extends Component {
   render() {
     return (
-      <main>
+      <main className=" w-full">
         <section className="flex flex-col justify-center items-start px-4 pb-10 bg-Green  gap-4">
           <h1 className="text-title text-Yellow font-Markazi-medium  font-medium flex flex-col gap-1">
             <span className=" h-16">Little Lemon </span>
@@ -18,7 +19,13 @@ export class Main extends Component {
           </p>
           <Button title="Reserve a table" />
         </section>
-        <section className=" flex flex-col"></section>
+        <section className=" flex flex-col items-center justify-center ">
+          <h2 className="text-sub_title text-Black font-Karla-extraBold  font-extrabold  w-3/4 text-center">
+            This Weeks Specials!!
+          </h2>
+          <Button title="Online Menu" />
+          <Specials_Container />
+        </section>
       </main>
     )
   }
