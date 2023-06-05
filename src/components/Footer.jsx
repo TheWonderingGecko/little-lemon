@@ -4,22 +4,19 @@ import logo from '../assets/Logo.svg'
 export class Footer extends Component {
   render() {
     return (
-      <footer>
+      <footer className=" flex gap-3 font-Karla-medium text-section_title text-White bg-Green p-4 font-medium">
         <section>
-          <figure>
-            <img src={logo} alt="Little lemon logo Logo" />
-            <figcaption>Little lemon</figcaption>
-          </figure>
+          <h2 className="text-Yellow">Dormat Navigation</h2>
           <nav>
             <ul>
               <li>
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/about">About</a>
+                <a href="#about">About</a>
               </li>
               <li>
-                <a href="/menu">Menu</a>
+                <a href="#menu">Menu</a>
               </li>
               <li>
                 <a href="/reservations">Reservations</a>
@@ -34,7 +31,7 @@ export class Footer extends Component {
           </nav>
         </section>
         <section>
-          <h2>Contact</h2>
+          <h2 className="text-Yellow">Contact</h2>
           <nav>
             <ul>
               <li>
@@ -50,7 +47,7 @@ export class Footer extends Component {
           </nav>
         </section>
         <section>
-          <h2>Resources</h2>
+          <h2 className="text-Yellow">Resources</h2>
           <nav>
             <ul>
               <li>

@@ -21,7 +21,10 @@ export class Main extends Component {
           </p>
           <Button title="Reserve a table" />
         </section>
-        <section className=" flex flex-col items-center justify-center ">
+        <section
+          className=" flex flex-col items-center justify-center "
+          id="menu"
+        >
           <h2 className="text-sub_title text-Black font-Karla-extraBold  font-extrabold  w-3/4 text-center">
             This Weeks Specials!!
           </h2>
@@ -37,7 +40,10 @@ export class Main extends Component {
           <Testimonials_Container />
         </section>
 
-        <section className="flex flex-col items-start justify-center px-4  py-4 ">
+        <section
+          className="flex flex-col items-start justify-center px-4  py-4 "
+          id="about"
+        >
           <h2 className="text-title text-Green font-Markazi-medium  font-medium flex flex-col gap-1">
             <span className=" h-16">Little Lemon </span>
             <span className=" h-10 text-Dark_Orange text-sub_title font-normal">
