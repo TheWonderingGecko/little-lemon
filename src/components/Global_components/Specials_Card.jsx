@@ -4,28 +4,39 @@ import { specials } from '../../Mock_data/specials'
 const Specials_Card = (props) => {
   return (
     <div
-      className="p-4 flex items-center justify-between border-b-2 first:border-t-2 gap-2 border-White  "
+      className="p-4 flex md:flex-col-reverse items-center justify-between border-b-2 first:border-t-2 gap-2 border-White w-full md:p-0 md:gap-4  md:border-0 md:first:border-t-0  md:bg-White "
       key={props.key}
     >
-      <div className=" flex flex-col gap-2  p-2">
-        <h3 className="text-Black text-card_title font-Karla-bold font-bold">
-          {props.special.title}
-        </h3>
-        <details className="text-Green text-paragraph font-Karla-regular font-normal">
+      <div className=" flex flex-col gap-2  p-2 md:h-full   ">
+        <div>
+          <h3 className="text-Black text-card_title font-Karla-bold font-bold">
+            {props.special.title}
+          </h3>
+          <span className="hidden md:block text-Dark_Orange text-medium font-Karla-medium font-medium ">
+            $ {props.special.price}
+          </span>
+        </div>
+        <details className="text-Green text-paragraph font-Karla-regular font-normal md:hidden">
           <summary className="hover:cursor-pointer">More Details</summary>
           <p className="text-Green text-paragraph font-Karla-regular font-normal ">
             {props.special.description}
           </p>
         </details>
-        <span className="text-Dark_Orange text-medium font-Karla-medium font-medium">
+        <p className="text-Green text-paragraph font-Karla-regular font-normal hidden md:flex flex-col gap-3 md:h-full   ">
+          {props.special.description}
+          <div className=" h-full flex justify-start items-end gap-2 text-Black font-bold">
+            <span>Order a delivery</span>
+            <span class="material-symbols-outlined">local_shipping</span>
+          </div>
+        </p>
+        <span className="text-Dark_Orange text-medium font-Karla-medium font-medium md:hidden">
           $ {props.special.price}
         </span>
       </div>
       <img
         src={props.special.image}
         alt=""
-        width="150px"
-        className=" rounded-md shadow-md shadow-Black "
+        className=" rounded-md shadow-md shadow-Black w-[125px] md:w-[264px]  md:h-[185px] flex-shrink-0  "
       />
     </div>
   )

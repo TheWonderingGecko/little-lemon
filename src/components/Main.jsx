@@ -20,13 +20,16 @@ export class Main extends Component {
         </section>
 
         <section
-          className=" flex flex-col items-center justify-center "
+          className=" flex flex-col items-center justify-center md:px-60 md:py-20"
           id="menu"
         >
-          <h2 className="text-sub_title text-Black font-Karla-extraBold  font-extrabold  w-3/4 text-center">
-            This Weeks Specials!!
-          </h2>
-          <Button title="Online Menu" />
+          <div className="flex flex-col items-center justify-between md:flex-row md:w-full  ">
+            <h2 className="text-sub_title text-Black font-Karla-extraBold  font-extrabold  w-3/4 text-center md:w-auto">
+              This Weeks Specials!!
+            </h2>
+            <Button title="Online Menu" />
+          </div>
+
           <Specials_Container />
         </section>
 
