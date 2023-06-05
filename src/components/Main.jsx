@@ -1,26 +1,24 @@
 import React, { Component } from 'react'
+import Hero_title from './Global_components/Hero_title'
 import Button from './Global_components/Button'
 import Specials_Container from './Global_components/Specials_Container'
 import Testimonials_Container from './Global_components/Testimonials_Container'
 import about_img from '../assets/MA_A.jpg'
+import Hero_img from '../assets/restauranfood.jpg'
 
 export class Main extends Component {
   render() {
     return (
       <main className=" w-full">
-        <section className="flex flex-col justify-center items-start px-4 pb-10 bg-Green  gap-4">
-          <h1 className="text-title text-Yellow font-Markazi-medium  font-medium flex flex-col gap-1">
-            <span className=" h-16">Little Lemon </span>
-            <span className=" h-10 text-White text-sub_title font-normal">
-              Chicago
-            </span>
-          </h1>
-          <p className="text-White text-medium font-Karla-medium font-medium w-60">
-            We are a family owned Mediterranean restaurant, focused on
-            traditional recipes served with a modern twist.
-          </p>
-          <Button title="Reserve a table" />
+        <section className=" bg-Green flex md:px-60 md:gap-10">
+          <Hero_title />
+          <img
+            className="hidden md:block h-[422px] w-[375px] object-cover object-center -mb-6 mt-6 rounded-2xl  flex-shrink-0 flex-grow-0"
+            src={Hero_img}
+            alt=""
+          />
         </section>
+
         <section
           className=" flex flex-col items-center justify-center "
           id="menu"
@@ -41,7 +39,7 @@ export class Main extends Component {
         </section>
 
         <section
-          className="flex flex-col items-start justify-center px-4  py-4 "
+          className="flex flex-col items-center justify-center px-4  py-4 "
           id="about"
         >
           <h2 className="text-title text-Green font-Markazi-medium  font-medium flex flex-col gap-1">
