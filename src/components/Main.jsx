@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Button from './Global_components/Button'
 import Specials_Container from './Global_components/Specials_Container'
+import Testimonials_Container from './Global_components/Testimonials_Container'
 
 export class Main extends Component {
   render() {
@@ -25,6 +26,14 @@ export class Main extends Component {
           </h2>
           <Button title="Online Menu" />
           <Specials_Container />
+        </section>
+
+        <section className="flex flex-col items-center justify-center bg-Green py-4  ">
+          <h2 className="text-4xl text-Yellow font-Markazi-medium font-medium  w-3/4 text-center">
+            Testimonials
+          </h2>
+
+          <Testimonials_Container />
         </section>
       </main>
     )

@@ -11,9 +11,12 @@ const Specials_Card = (props) => {
         <h3 className="text-Black text-card_title font-Karla-bold font-bold">
           {props.special.title}
         </h3>
-        <p className="text-Green text-paragraph font-Karla-regular font-normal h-16 overflow-scroll">
-          {props.special.description}
-        </p>
+        <details className="text-Green text-paragraph font-Karla-regular font-normal">
+          <summary className="hover:cursor-pointer">More Details</summary>
+          <p className="text-Green text-paragraph font-Karla-regular font-normal ">
+            {props.special.description}
+          </p>
+        </details>
         <span className="text-Dark_Orange text-medium font-Karla-medium font-medium">
           $ {props.special.price}
         </span>
