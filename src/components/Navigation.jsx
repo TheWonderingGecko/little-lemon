@@ -5,8 +5,8 @@ export class Navigation extends Component {
   render() {
     return (
       <>
-        <nav className="  w-screen flex flex-row justify-between p-2">
-          <ul className="hidden">
+        <nav className="  w-screen flex flex-row justify-between p-2 md:p-0">
+          <ul className="hidden md:flex font-Karla-medium font-medium text-section_title gap-2 justify-center items-center w-fit ">
             <li>
               <a href="#">Home</a>
             </li>
@@ -26,11 +26,11 @@ export class Navigation extends Component {
               <a href="/login">Login</a>
             </li>
           </ul>
-          <span class="material-symbols-outlined text-Green text-5xl">
+          <span class="material-symbols-outlined text-Green text-5xl md:hidden">
             menu
           </span>
 
-          <span class="material-symbols-outlined text-Green text-5xl ">
+          <span class="material-symbols-outlined text-Green text-5xl md:hidden ">
             shopping_basket
           </span>
         </nav>
