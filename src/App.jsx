@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 function App() {
   return (
     <>
-      <div className="md:flex gap-8  justify-center items-center md:mx-60 md:py-4">
+      <div className="lg:flex gap-8  justify-center items-center lg:mx-60 lg:py-4 xl:w-screen xl:mx-0 xl:justify-evenly">
         <Header />
         <Navigation />
       </div>

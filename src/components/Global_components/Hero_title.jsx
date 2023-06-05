@@ -10,7 +10,7 @@ const Hero_title = () => {
             Chicago
           </span>
         </h1>
-        <p className="text-White text-medium font-Karla-medium font-medium w-60">
+        <p className="text-White text-medium font-Karla-medium font-medium w-60 xl:w-fit">
           We are a family owned Mediterranean restaurant, focused on traditional
           recipes served with a modern twist.
         </p>

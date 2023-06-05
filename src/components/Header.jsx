@@ -4,7 +4,7 @@ import logo from '../assets/Logo.svg'
 export class Header extends Component {
   render() {
     return (
-      <header className="flex-shrink-0 hidden md:block  ">
+      <header className="flex-shrink-0 hidden lg:block  ">
         <img src={logo} alt="" width="194px" />
       </header>
     )

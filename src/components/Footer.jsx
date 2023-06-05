@@ -4,7 +4,13 @@ import logo from '../assets/Logo.svg'
 export class Footer extends Component {
   render() {
     return (
-      <footer className=" flex gap-3 font-Karla-medium text-section_title text-White bg-Green p-4 font-medium">
+      <footer className=" flex gap-3 font-Karla-medium text-section_title text-White bg-Green p-4 font-medium lg:px-60 lg:justify-between">
+        <img
+          src={logo}
+          alt=""
+          className="bg-white p-4 border-2 border-Black hidden md:block"
+        />
+
         <section>
           <h2 className="text-Yellow">Dormat Navigation</h2>
           <nav>
