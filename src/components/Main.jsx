@@ -50,7 +50,7 @@ export class Main extends Component {
               className=" rounded-md shadow-md shadow-Black my-3 "
             />
           </h2>
-          <details className="text-Black text-medium font-Karla-medium font-medium w-60">
+          <details className="text-Black text-medium font-Karla-bold font-bold ">
             <summary>About us</summary>
             <p>
               Little Lemon is owned by two Italian brothers, Mario and Adrian,
