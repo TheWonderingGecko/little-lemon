@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import hamburger from '../assets/hamburger.svg'
+import { Link } from 'react-router-dom'
 
 export class Navigation extends Component {
   render() {
@@ -8,7 +9,7 @@ export class Navigation extends Component {
         <nav className="  w-screen flex flex-row justify-between p-2 lg:p-0 xl:w-fit">
           <ul className="hidden lg:flex font-Karla-medium font-medium text-section_title gap-2 justify-center items-center w-fit xl:gap-20 ">
             <li>
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li className="">
               <a href="#about-2">About</a>
@@ -17,7 +18,7 @@ export class Navigation extends Component {
               <a href="#menu">Menu</a>
             </li>
             <li>
-              <a href="/reservations">Reservations</a>
+              <Link to="/reservations">Reservations</Link>
             </li>
             <li>
               <a href="/order-Online">Order Online</a>
@@ -26,11 +27,11 @@ export class Navigation extends Component {
               <a href="/login">Login</a>
             </li>
           </ul>
-          <span class="material-symbols-outlined text-Green text-5xl lg:hidden">
+          <span className="material-symbols-outlined text-Green text-5xl lg:hidden">
             menu
           </span>
 
-          <span class="material-symbols-outlined text-Green text-5xl lg:hidden ">
+          <span className="material-symbols-outlined text-Green text-5xl lg:hidden ">
             shopping_basket
           </span>
         </nav>

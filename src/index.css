@@ -5,3 +5,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+.move-out {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
