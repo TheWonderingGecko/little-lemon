@@ -12,6 +12,10 @@ const BookingForm = (props) => {
 
   const SubmitForm = (e) => {
     e.preventDefault()
+    if (date === '') {
+      alert('Please choose a date')
+      return
+    }
     const formData = {
       date,
       time: props.initalTime,
@@ -44,6 +48,7 @@ const BookingForm = (props) => {
         type="date"
         id="res-date"
         value={date}
+        placeholder="YYYY-MM-DD"
         onChange={(e) => {
           setDate(e.target.value)
           props.updateTimes(e.target.value)
