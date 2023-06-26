@@ -1,6 +1,7 @@
 import BookingForm from '../components/Global_components/BookingForm'
+import { useNavigate } from 'react-router-dom'
 
-import { useEffect, useReducer } from 'react'
+import { useEffect, useReducer, useState } from 'react'
 
 const currentDate = new Date()
 
@@ -9,13 +10,14 @@ const seededRandom = function (seed) {
   var a = 185852
   var s = seed % m
   return function () {
-    return (s = (s * a) % m) / m
+    s = (s * a + seed) % m
+    return s / m
   }
 }
 
 const fetchAPI = function (date) {
   let result = []
-  let random = seededRandom(date.getDate())
+  let random = seededRandom(date.getTime())
 
   for (let i = 17; i <= 23; i++) {
     if (random() < 0.5) {
@@ -26,9 +28,6 @@ const fetchAPI = function (date) {
     }
   }
   return result
-}
-const submitAPI = function (formData) {
-  return true
 }
 
 const timesReducer = (state, action) => {
@@ -44,24 +43,35 @@ const timesReducer = (state, action) => {
 
 const Booking = () => {
   const [availableTimes, dispatch] = useReducer(timesReducer, [])
+  const Navigate = useNavigate()
+  const [time, setTime] = useState('')
   const today = new Date()
 
+  const submitAPI = function (formData) {
+    console.log(formData)
+    Navigate('/confirmed')
+
+    return true
+  }
+
   const updateTimes = (date) => {
-    const updatedDate = Date(date)
-    const times = fetchAPI(updatedDate)
-    console.log(updatedDate)
+    console.log(date)
+    const today = new Date(date)
+    console.log(today)
+
+    const times = fetchAPI(today)
 
     dispatch({
       type: 'UPDATE_TIMES',
       payload: times,
     })
+    console.log(times)
   }
 
   const initializeTimes = () => {
     try {
       const times = fetchAPI(currentDate)
-
-      console.log(currentDate)
+      setTime(times[0])
 
       dispatch({
         type: 'INITIALIZE_TIMES',
@@ -77,9 +87,12 @@ const Booking = () => {
   }, [])
 
   return (
-    <div className="flex justify-center items-center bg-White">
+    <div className="flex items-center justify-center bg-White">
       <BookingForm
         availableTimes={availableTimes}
+        initalTime={time}
+        changeTime={setTime}
+        submit={submitAPI}
         updateTimes={updateTimes}
         date={currentDate}
       />

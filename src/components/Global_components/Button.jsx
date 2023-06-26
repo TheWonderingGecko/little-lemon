@@ -5,9 +5,9 @@ const Button = (props) => {
     <button
       role="button"
       type={props.type}
-      className="bg-Yellow px-4 py-2 rounded-md  font-Karla-bold text-paragraph font-bold w-fit h-fit "
+      className="px-4 py-2 font-bold rounded-md bg-Yellow font-Karla-bold text-paragraph w-fit h-fit "
     >
-      <Link to={props.link}>{props.title}</Link>
+      {props.link ? <Link to={props.link}>{props.title}</Link> : props.title}
     </button>
   )
 }

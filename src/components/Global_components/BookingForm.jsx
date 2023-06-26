@@ -1,15 +1,24 @@
+import { useNavigate } from 'react-router-dom'
 import Button from '../Global_components/Button'
 import { useState, useEffect } from 'react'
 
 const BookingForm = (props) => {
+  const Navigate = useNavigate()
+
   const [date, setDate] = useState(convertDateFormat(props.date))
-  const [time, setTime] = useState('')
 
-  const [guests, setGuests] = useState('')
-  const [occasion, setOccasion] = useState('')
+  const [guests, setGuests] = useState(1)
+  const [occasion, setOccasion] = useState('Birthday')
 
-  const Test = () => {
-    console.log(date, time, guests, occasion)
+  const SubmitForm = (e) => {
+    e.preventDefault()
+    const formData = {
+      date,
+      time: props.initalTime,
+      guests,
+      occasion,
+    }
+    props.submit(formData)
   }
 
   function convertDateFormat(dateString) {
@@ -22,8 +31,8 @@ const BookingForm = (props) => {
   }
   return (
     <form
-      className="flex flex-col gap-4 w-1/2 py-4 font-Karla-extraBold font-extrabold "
-      onSubmit={Test}
+      className="flex flex-col w-1/2 gap-4 py-4 font-extrabold font-Karla-extraBold "
+      onSubmit={SubmitForm}
     >
       <label
         htmlFor="res-date"
@@ -37,9 +46,10 @@ const BookingForm = (props) => {
         value={date}
         onChange={(e) => {
           setDate(e.target.value)
-          props.updateTimes(date)
+          props.updateTimes(e.target.value)
+          console.log('change')
         }}
-        className="p-2 rounded-md  border-Green border-4"
+        className="p-2 border-4 rounded-md border-Green"
       />
       <label
         htmlFor="res-time"
@@ -49,9 +59,9 @@ const BookingForm = (props) => {
       </label>
       <select
         id="res-time "
-        value={time}
-        onChange={(e) => setTime(e.target.value)}
-        className="p-2 rounded-md  border-Green border-4 bg-white"
+        value={props.initalTime}
+        onChange={(e) => props.changeTime(e.target.value)}
+        className="p-2 bg-white border-4 rounded-md border-Green"
       >
         {props.availableTimes.map((time) => (
           <option key={time} value={time}>
@@ -73,7 +83,7 @@ const BookingForm = (props) => {
         id="guests"
         value={guests}
         onChange={(e) => setGuests(e.target.value)}
-        className="p-2 rounded-md  border-Green border-4 text-black"
+        className="p-2 text-black border-4 rounded-md border-Green"
       />
       <label
         htmlFor="occasion"
@@ -85,13 +95,13 @@ const BookingForm = (props) => {
         id="occasion"
         value={occasion}
         onChange={(e) => setOccasion(e.target.value)}
-        className="p-2 rounded-md  border-Green border-4 bg-white"
+        className="p-2 bg-white border-4 rounded-md border-Green"
       >
         <option value="Birthday">Birthday</option>
         <option value="Anniversary">Anniversary</option>
       </select>
-      <button type="submit"> Make Your reservation</button>
-      <Button title="Make Your reservation" />
+
+      <Button title="Make Your reservation" type="submit" />
     </form>
   )
 }
