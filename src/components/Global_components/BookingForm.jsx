@@ -16,6 +16,13 @@ const BookingForm = (props) => {
       alert('Please choose a date')
       return
     }
+
+    if (guests === '') {
+      alert('Please choose a number of guests')
+
+      return
+    }
+
     const formData = {
       date,
       time: props.initalTime,

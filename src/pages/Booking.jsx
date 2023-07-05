@@ -1,4 +1,5 @@
 import BookingForm from '../components/Global_components/BookingForm'
+import hero_image from '/src/assets/restauranfood.jpg'
 import { useNavigate } from 'react-router-dom'
 
 import { useEffect, useReducer, useState } from 'react'
@@ -87,16 +88,28 @@ const Booking = () => {
   }, [])
 
   return (
-    <div className="flex items-center justify-center bg-White">
-      <BookingForm
-        availableTimes={availableTimes}
-        initalTime={time}
-        changeTime={setTime}
-        submit={submitAPI}
-        updateTimes={updateTimes}
-        date={currentDate}
-      />
-    </div>
+    <>
+      <div className=" relative h-[50vh]">
+        <img src={hero_image} alt="" className="object-cover w-full h-full" />
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="font-bold text-center font-Karla-bold text-sub_title text-White ">
+            We're excited to have you{' '}
+            <span className="underline text-Yellow ">dine</span> with us!
+          </h1>
+        </div>
+      </div>
+      <div className="flex items-center justify-center bg-White">
+        <BookingForm
+          availableTimes={availableTimes}
+          initalTime={time}
+          changeTime={setTime}
+          submit={submitAPI}
+          updateTimes={updateTimes}
+          date={currentDate}
+        />
+      </div>
+    </>
   )
 }
 export default Booking
