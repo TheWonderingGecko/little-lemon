@@ -61,7 +61,7 @@ const BookingForm = (props) => {
           props.updateTimes(e.target.value)
           console.log('change')
         }}
-        className="p-2 border-4 rounded-md border-Green"
+        className="w-full p-2 border-4 rounded-md border-Green"
       />
       <label
         htmlFor="res-time"
