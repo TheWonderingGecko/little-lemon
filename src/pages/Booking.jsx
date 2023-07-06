@@ -1,6 +1,6 @@
 import BookingForm from '../components/Global_components/BookingForm'
 import hero_image from '/src/assets/restauranfood.jpg'
-import { useNavigate } from 'react-router-dom'
+import { BrowserRouter as Router, useNavigate } from 'react-router-dom'
 
 import { useEffect, useReducer, useState } from 'react'
 
@@ -43,16 +43,12 @@ const timesReducer = (state, action) => {
 }
 
 const Booking = () => {
-  const [availableTimes, dispatch] = useReducer(timesReducer, [])
-  const Navigate = useNavigate()
   const [time, setTime] = useState('')
-  const today = new Date()
-
+  const [availableTimes, dispatch] = useReducer(timesReducer, [])
   const submitAPI = function (formData) {
     console.log(formData)
-    Navigate('/confirmed')
 
-    return true
+    window.location.href = '#/confirmed'
   }
 
   const updateTimes = (date) => {
@@ -101,6 +97,7 @@ const Booking = () => {
       </div>
       <div className="flex items-center justify-center bg-White">
         <BookingForm
+          id="booking-form"
           availableTimes={availableTimes}
           initalTime={time}
           changeTime={setTime}

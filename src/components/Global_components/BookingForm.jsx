@@ -1,10 +1,7 @@
-import { useNavigate } from 'react-router-dom'
 import Button from '../Global_components/Button'
 import { useState, useEffect } from 'react'
 
 const BookingForm = (props) => {
-  const Navigate = useNavigate()
-
   const [date, setDate] = useState(convertDateFormat(props.date))
 
   const [guests, setGuests] = useState(1)
@@ -44,6 +41,7 @@ const BookingForm = (props) => {
     <form
       className="flex flex-col w-1/2 gap-4 py-4 font-extrabold font-Karla-extraBold "
       onSubmit={SubmitForm}
+      role="form"
     >
       <label
         htmlFor="res-date"
