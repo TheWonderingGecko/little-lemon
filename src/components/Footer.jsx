@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/Logo.svg'
 
 export class Footer extends Component {
   render() {
     return (
-      <footer className=" flex gap-3 font-Karla-medium text-section_title text-White bg-Green p-4 font-medium lg:px-60 lg:justify-between">
+      <footer className="flex gap-3 p-4 font-medium font-Karla-medium text-section_title text-White bg-Green lg:px-60 lg:justify-between">
         <img
           src={logo}
           alt=""
-          className="bg-white p-4 border-2 border-Black hidden md:block"
+          className="hidden p-4 bg-white border-2 border-Black md:block"
         />
 
         <section>
@@ -19,13 +20,13 @@ export class Footer extends Component {
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="#about">About</a>
+                <a href="/">About</a>
               </li>
               <li>
-                <a href="#menu">Menu</a>
+                <a href="/"> Menu</a>
               </li>
               <li>
-                <a href="/reservations">Reservations</a>
+                <Link to="/reservations">Reservations</Link>
               </li>
               <li>
                 <a href="/order-Online">Order Online</a>

@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <HashRouter>
-        <div className="items-center justify-center gap-8 lg:flex lg:mx-60 lg:py-4 xl:w-screen xl:mx-0 xl:justify-evenly">
+        <div className="relative items-center justify-center gap-8 lg:flex lg:mx-60 lg:py-4 xl:w-screen xl:mx-0 xl:justify-evenly">
           <Header />
           <Navigation />
         </div>
